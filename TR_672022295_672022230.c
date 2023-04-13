@@ -587,3 +587,117 @@ void edit() {
     system("cls");
     menu();
 }
+
+void menu(){
+    int pilihan;
+    balik:
+    system("cls");
+    system("color 4f");
+    gotoxy(30,3);Sleep(1000);printf("+ ===================================================== +");
+    gotoxy(30, 5);Sleep(1000);printf("          SELAMAT DATANG DI DATABASE DEALER MOBIL         \n");
+    gotoxy(30, 6);Sleep(1000);printf("             ~~~ MENU DEALER MOBIL SAKIT KEPALA ~~~                 \n");
+    gotoxy(30, 8);Sleep(1000);printf("+ ===================================================== +");
+    gotoxy(30, 10);printf("|                                                      |");
+    gotoxy(30, 11);printf("|   Tekan 1. MENAMBAH DATA KE DATABASE                 |");
+    gotoxy(30, 12);printf("|   Tekan 2. MENAMPILKAN ISI DATABASE                  |");
+    gotoxy(30, 13);printf("|   Tekan 3. MENGHAPUS DATA PADA DATABASE              |");
+    gotoxy(30, 14);printf("|   Tekan 4. MENGUBAH DATA PADA DATABASE               |");
+    gotoxy(30, 15);printf("|   Tekan 5. MENCARI DATA PADA DATABASE                |");
+    gotoxy(30, 16);printf("|   Tekan 6. MENGURUTKAN DATA PADA DATABASE            |");
+    gotoxy(30, 17);printf("|   Tekan 7. KELUAR                                    |");
+    gotoxy(30, 18);printf("|                                                      |");
+    gotoxy(30, 19);printf("|   Masukkan pilihan Anda :                            |");
+    gotoxy(30, 21);printf("+ =====================================================+");
+    gotoxy(58,20);scanf("%d", &pilihan);
+
+    if(pilihan==1){
+        tambahDatabase();
+    }else if(pilihan==2){
+        tampilDatabase();
+    }else if(pilihan==3){
+        hapusDatabase();
+    }else if(pilihan==4){
+        edit();
+    }else if(pilihan==5){
+		cari();
+    }else if(pilihan==6){
+		urut();
+    }else if(pilihan==7){
+        keluar();
+    }else{
+        gotoxy(40,25);
+        printf("Pilihan Anda Salah...");
+        getch();
+        goto balik;
+    }
+}
+
+void keluar(){
+    system("cls");
+    int i;
+
+    system("color 7c");
+    Sleep(1000);
+    gotoxy(40,5);printf("    THANKS TO ALLAH SWT    \n");
+    Sleep(1000);
+    gotoxy(40,6);printf("*   THANKS TO ORANG TUA    *\n");
+    Sleep(1000);
+    gotoxy(40,7);printf("**** THANKS TO WBASURA  ****\n");
+    Sleep(1000);
+    gotoxy(40,8);printf("*  THANKS TO ALL SUPPORT  *\n");
+    Sleep(1000);
+    gotoxy(40,9);printf("****        *        *****\n");
+    Sleep(3000);
+    gotoxy(40,15);printf("Femas Cahya Renaldio\t(672022295)\n");
+    gotoxy(40,16);printf("Yosua Ivan Tua Pardosi\t(672022320)\n");
+
+    Sleep(5000);
+
+    for(i = 5; i >= 0; i--)
+    {
+        gotoxy(37,20);
+        printf("Program akan keluar dalam %d\n", i);
+        Sleep(1000);
+    }
+    gotoxy(35,23);printf("Terimakasih telah menggunakan database ini ^-^\n");
+    Sleep(500);
+    exit(0);
+}
+
+//login
+void login(){
+    balik:
+    system("cls");
+    struct tm *sys_tme;
+
+    time_t Tval;
+    Tval = time(NULL);
+    sys_tme = localtime(&Tval);
+
+    char username[15];
+    char password[15];
+    int benar = 0, salah = 1;
+
+    system("color 6b");
+    gotoxy(40,10);
+    Sleep(1000);
+    printf("  SELAMAT DATANG DI DEALER MOBIL \n");
+    Sleep(1000);
+    gotoxy(40,12);
+    Sleep(1000);
+    printf("======================================");
+    Sleep(1000);
+    gotoxy(40,16);
+    Sleep(1000);
+    printf("=====================================");
+    // Mengatur Hari Bulan Tahun
+    gotoxy(40,18);printf("%d/%d/%d", sys_tme->tm_mday, sys_tme->tm_mday+1, 1900+sys_tme->tm_year);
+    // Mengatur Waktu
+    gotoxy(68,18);printf("%d:%d", sys_tme->tm_hour, sys_tme->tm_min);
+    gotoxy(40,13);printf("Masukkan Username : ");
+    scanf("%s", &username);
+    gotoxy(40,14);printf("\n");
+    gotoxy(40,15);printf("Masukkan Password : ");
+    scanf("%s", &password);
+    gotoxy(40,19);
+    printf("");
