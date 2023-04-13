@@ -320,3 +320,270 @@ void cari() {
 	}
 
 }
+
+void urut() {
+	system("cls");
+	struct dealer temp;
+	int i,j,y,x,k = 0;
+	int pilih,no;
+	char *dasar [100];
+
+    gotoxy(30,3);Sleep(1000);printf("+ ================================================= +");
+    gotoxy(30,5);Sleep(1000);printf("                      DATABASE                      ");
+    gotoxy(30,6);Sleep(1000);printf("          === Mengurutkan ISI DATABASE ===    ");
+    gotoxy(30,8);Sleep(1000);printf("+ ================================================= +");
+
+   	gotoxy(30,10);printf("Urutkan data berdasarkan :\n");
+   	gotoxy(30,11);printf("1. Kode\n");
+	gotoxy(30,12);printf("2. Nama Mobil\n");
+   	gotoxy(30,13);printf("3. Jenis\n");
+   	gotoxy(30,14);printf("4. Jumlah\n");
+   	gotoxy(30,15);printf("5. Harga\n");
+   	gotoxy(30,16);printf("Masukkan Pilihan : ");
+   	scanf("%d", &pilih);
+   	gotoxy(30,18);printf("Urutkan Data Secara : \n");
+   	gotoxy(30,19);printf("1. Ascending\n");
+	gotoxy(30,20);printf("2. Descending\n");
+   	gotoxy(30,21);printf("Masukkan Pilihan : ");
+   	scanf("%d", &no);
+   	printf("\n");
+
+   	if (pilih == 1) {
+
+   		if (no == 1) {
+   			dasar [100] = "BERDASARKAN KODE ASCENDING";
+		} else if (no == 2) {
+   			dasar [100] = "BERDASARKAN KODE DESCENDING";
+		}
+
+   		for (i = 0; i < banyakdata - 1; i++) {
+			int min = i;
+			for (j = i + 1; j < banyakdata; j++) {
+				if (no == 1) {
+					if (strcmp(dealer[min].kode, dealer[j].kode) > 0) {
+					min = j;
+					}
+				} else if (no == 2) {
+					if (strcmp(dealer[min].kode, dealer[j].kode) < 0) {
+					min = j;
+					}
+				}
+			}
+			temp = dealer [i];
+			dealer [i] = dealer [min];
+			dealer [min] = temp;
+		}
+
+	} else if (pilih == 2) {
+
+   		if (no == 1) {
+   			dasar [100] = "BERDASARKAN NAMA BARANG ASCENDING";
+		} else if (no == 2) {
+   			dasar [100] = "BERDASARKAN NAMA BARANG DESCENDING";
+		}
+
+   		for (i = 0; i < banyakdata - 1; i++) {
+			int min = i;
+			for (j = i + 1; j < banyakdata; j++) {
+				if (no == 1) {
+					if (strcmp(dealer[min].nama_mobil, dealer[j].nama_mobil) > 0) {
+					min = j;
+					}
+				} else if (no == 2) {
+					if (strcmp(dealer[min].nama_mobil, dealer[j].nama_mobil) < 0) {
+					min = j;
+					}
+				}
+			}
+			temp = dealer [i];
+			dealer [i] = dealer [min];
+			dealer [min] = temp;
+		}
+
+	} else if (pilih == 3) {
+
+   		if (no == 1) {
+   			dasar [100] = "BERDASARKAN JENIS ASCENDING";
+		} else if (no == 2) {
+   			dasar [100] = "BERDASARKAN JENIS DESCENDING";
+		}
+
+   		for (i = 0; i < banyakdata - 1; i++) {
+			int min = i;
+			for (j = i + 1; j < banyakdata; j++) {
+				if (no == 1) {
+					if (strcmp(dealer[min].jenis, dealer[j].jenis) > 0) {
+					min = j;
+					}
+				} else if (no == 2) {
+					if (strcmp(dealer[min].jenis, dealer[j].jenis) < 0) {
+					min = j;
+					}
+				}
+			}
+			temp = dealer [i];
+			dealer [i] = dealer [min];
+			dealer [min] = temp;
+		}
+
+	} else if (pilih == 4) {
+
+   		if (no == 1) {
+   			dasar [100] = "BERDASARKAN JUMLAH ASCENDING";
+		} else if (no == 2) {
+   			dasar [100] = "BERDASARKAN JUMLAH DESCENDING";
+		}
+
+   		for (i = 0; i < banyakdata - 1; i++) {
+			int min = i;
+			for (j = i + 1; j < banyakdata; j++) {
+				if (no == 1) {
+					if (strcmp(dealer[min].jumlah, dealer[j].jumlah) > 0) {
+					min = j;
+					}
+				} else if (no == 2) {
+					if (strcmp(dealer[min].jumlah, dealer[j].jumlah) < 0) {
+					min = j;
+					}
+				}
+			}
+			temp = dealer [i];
+			dealer [i] = dealer [min];
+			dealer [min] = temp;
+		}
+	} else if (pilih == 5) {
+   		if (no == 1) {
+   			dasar [100] = "BERDASARKAN HARGA ASCENDING";
+		} else if (no == 2) {
+   			dasar [100] = "BERDASARKAN HARGA DESCENDING";
+		}
+
+   		for (i = 0; i < banyakdata - 1; i++) {
+			int min = i;
+			for (j = i + 1; j < banyakdata; j++) {
+				if (no == 1) {
+					if (strcmp(dealer[min].harga, dealer[j].harga) > 0) {
+					min = j;
+					}
+				} else if (no == 2) {
+					if (strcmp(dealer[min].harga, dealer[j].harga) < 0) {
+					min = j;
+					}
+				}
+			}
+			temp = dealer [i];
+			dealer [i] = dealer [min];
+			dealer [min] = temp;
+		}
+
+	}
+
+system("cls");
+    gotoxy(10,3);
+    printf("+ ========================================================================================================= +");
+    gotoxy(60,5);
+    printf("DATABASE");
+    gotoxy(35,6);
+    printf("=== MENAMPILKAN ISI DATABASE %s ===", dasar[100]);
+    gotoxy(10,8);
+    printf("+ ========================================================================================================= +");
+
+    gotoxy(10,10);
+    printf("|Kode Mobil");
+    gotoxy(33,10);
+    printf("|Nama Mobil");
+    gotoxy(56,10);
+    printf("|Jenis Mobil");
+    gotoxy(79,10);
+    printf("|Jumlah Mobil");
+    gotoxy(102,10);
+    printf("|Harga Mobil");
+
+    for(i=0; i < banyakdata; i++){
+        gotoxy(10,11+i+1);
+        printf("|%s", dealer[i].kode);
+        gotoxy(33, 11+i+1);
+        printf("|%s", dealer[i].nama_mobil);
+        gotoxy(56, 11+i+1);
+        printf("|%s", dealer[i].jenis);
+        gotoxy(79, 11+i+1);
+        printf("|%s", dealer[i].jumlah);
+        gotoxy(102, 11+i+1);
+        printf("|%s", dealer[i].harga);
+        printf("\n");
+    }
+    gotoxy(10,20);
+    printf("+ ========================================================================================================== +");
+    strcpy(rriwayat[riwayad], "ADMIN MENGURUTKAN DATABASE\n");
+    riwayad++;
+
+    gotoxy(11,30);printf("\nKlik Apa Saja Untuk Melanjutkan....");
+    getch();
+    menu();
+
+}
+
+void edit() {
+
+    char kode[10], pilih;
+    int i;
+    struct dealer ubah;
+    bool ada = false;
+
+	ubah:
+    system("cls");
+    gotoxy(30,3);Sleep(1000);printf("+ ================================================= +");
+    gotoxy(30,5);Sleep(1000);printf("                      DATABASE                      ");
+    gotoxy(30,6);Sleep(1000);printf("            === MENGUBAH ISI DATABASE ===    ");
+    gotoxy(30,8);Sleep(1000);printf("+ ================================================= +");
+    gotoxy(30,9);printf("      Masukkan kode mobil yang ingin diubah :       ");
+    gotoxy(30,10);printf("+ ================================================= +");
+    gotoxy(78,9);scanf("%s", &kode);
+
+    for(i = 0; i < banyakdata; i++)
+    {
+        if(strcmp(kode, dealer[i].kode) == 0)
+        {
+            gotoxy(32, 12);
+            printf(":: Masukkan Data ::");
+            gotoxy(32, 13);
+            printf(":: Kode Mobil\t = ");
+            scanf("%s", &ubah.kode);
+            gotoxy(32, 14);
+            printf(":: Nama Mobil\t = ");
+            scanf("%s", &ubah.nama_mobil);
+            gotoxy(32, 15);
+            printf(":: Jenis Mobil\t = ");
+            fflush(stdin);
+            scanf("%s", &ubah.jenis);
+            gotoxy(32, 16);
+            printf(":: Jumlah Mobil\t = ");
+            scanf("%s", &ubah.jumlah);
+            gotoxy(32, 17);
+            printf(":: Harga Mobil\t = ");
+            scanf("%s", &ubah.harga);
+
+            dealer[i] = ubah;
+            ada = true;
+        }
+    }
+    if (ada == false) {
+            gotoxy(29,12);
+            printf("Kode %s tidak dapat ditemukan, ingin coba lagi ? (y/n) : ", kode);
+            scanf("%s", &pilih);
+            if (pilih == 'y' || pilih == 'Y') {
+                goto ubah;
+			} else {
+				system("cls");
+                menu();
+			}
+		}
+
+    strcpy(rriwayat[riwayad], "ADMIN MENGEDIT DATABASE\n");
+    riwayad++;
+    gotoxy(32,19);
+    printf("Klik Apa Saja Untuk Melanjutkan ");
+    getch();
+    system("cls");
+    menu();
+}
