@@ -701,3 +701,18 @@ void login(){
     scanf("%s", &password);
     gotoxy(40,19);
     printf("");
+	
+	if((strcmp(username, "admin")==0) && (strcmp(password, "ganteng")==0)){
+        gotoxy(50,20);printf("Login Anda Berhasil!!\n");
+        gotoxy(45,21);printf("Klik Apa Saja Untuk Melanjutkan....\n");
+        gotoxy(72,21);getch();
+        benar = 1;
+        menu();
+    }else{
+        gotoxy(40,20);
+        printf("Username atau Password Salah");
+        getch();
+        goto balik;
+    }
+}
+
